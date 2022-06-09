@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class SnakeBehaviour : MonoBehaviour
 {
-    float movementSpeed = 0.10f;
+    // public GameObject ActivateandDeactivate;
+
+    //float movementSpeed = 0.10f;
     // Start is called before the first frame update
     public float MoveSpeed= 5;
     public float  SteerSpeed= 180;
+    public GameObject cuerpo;
+    
+    int manzana;
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
         transform.position += transform.forward * MoveSpeed * Time.deltaTime;
         float SteerDirection = Input.GetAxis("Horizontal");
         transform.Rotate(Vector3.up * SteerDirection * SteerSpeed * Time.deltaTime);
@@ -41,5 +48,23 @@ public class SnakeBehaviour : MonoBehaviour
             transform.Translate(-movementSpeed, 0, 0);
         }
         */
+    }
+
+    void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.tag == "ground")
+        { 
+            Destroy(gameObject);
+        }
+    }
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "manzana")
+        {
+            Destroy(col.gameObject);
+            //manzana = manzana + 1;
+            
+        }
+
     }
 }
