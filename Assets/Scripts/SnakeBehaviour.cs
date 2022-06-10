@@ -11,7 +11,6 @@ public class SnakeBehaviour : MonoBehaviour
     public float MoveSpeed= 5;
     public float  SteerSpeed= 180;
     public GameObject cuerpo;
-    
     int manzana;
     void Start()
     {
@@ -62,9 +61,12 @@ public class SnakeBehaviour : MonoBehaviour
         if (col.gameObject.tag == "manzana")
         {
             Destroy(col.gameObject);
+           // movement.AddBodyPart();
             //manzana = manzana + 1;
             
         }
-
+       
     }
+
 }
+        

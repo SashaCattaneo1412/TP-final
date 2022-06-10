@@ -31,17 +31,8 @@ public class Clone : MonoBehaviour
         }
     
      }
-   /* void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.tag == "manzana")
-        {
 
-            Instantiate(cuerpo);
-            cuerpo.GetComponent<MeshRenderer>().enabled = true;
-            cuerpo.GetComponent<BoxCollider>().enabled = true;
 
-        }
 
-    }
-    */
+
 }
